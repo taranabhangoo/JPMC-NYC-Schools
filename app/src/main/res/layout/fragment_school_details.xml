@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="school"
+            type="com.jpmc.nycschools.data.repository.NycSchool" />
+
+        <variable
+            name="satScore"
+            type="com.jpmc.nycschools.data.repository.NycSchoolSatScores" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.schooldetails.NycSchoolDetailsFragment">
+
+        <TextView
+            android:id="@+id/tv_school_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{school.schoolName}"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_school_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{`ADDRESS\n` + school.schoolLocation}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_name" />
+
+        <TextView
+            android:id="@+id/tv_school_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{`OVERVIEW\n` + school.schoolOverview}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_address" />
+
+        <TextView
+            android:id="@+id/tv_score_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="16dp"
+            satScore= "@{satScore}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_overview"/>
+
+        <!--<TextView
+            android:id="@+id/tv_score_details_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/score_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_overview" />
+
+        <TextView
+            android:id="@+id/tv_school_sat_reading_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:text="@{`Sat Reading Score: ` + satScore.satCriticalReadingAvgScore}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_score_details_label" />
+
+        <TextView
+            android:id="@+id/tv_school_math_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:text="@{`Math Score: ` + satScore.satMathAvgScore}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_sat_reading_score" />
+
+        <TextView
+            android:id="@+id/tv_school_writing_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="4dp"
+            android:text="@{`Writing Score: ` + satScore.satWritingAvgScore}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_school_math_score" />-->
+
+        <TextView
+            android:id="@+id/tv_school_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{`Phone number: ` + school.schoolPhoneNumber}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_school_email" />
+
+        <TextView
+            android:id="@+id/tv_school_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="4dp"
+            android:text="@{`Email: ` + school.schoolEmail}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

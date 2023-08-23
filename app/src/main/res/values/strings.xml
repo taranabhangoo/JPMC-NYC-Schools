@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NYCSchools</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="score_details_not_available">Average SAT scores: Not available</string>
+    <string name="api_status">Api status</string>
+
+    <!-- Schools list-->
+</resources>
